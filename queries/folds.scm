@@ -43,7 +43,7 @@
 (if_statement
   consequence: (code_block) @fold)
 (if_statement
-  alternative: (else_clause (code_block) @fold))
+  alternative: (else_branch (code_block) @fold))
 (case_statement body: (_) @fold)
 (for_statement body: (code_block) @fold)
 (while_statement body: (code_block) @fold)

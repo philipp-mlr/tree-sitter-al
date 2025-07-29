@@ -1,47 +1,47 @@
 ;; Keywords
-(kw "table") @keyword.type
-(kw "tableextension") @keyword.type
-(kw "page") @keyword.type
-(kw "pageextension") @keyword.type
-(kw "codeunit") @keyword.type
-(kw "report") @keyword.type
-(kw "reportextension") @keyword.type
-(kw "query") @keyword.type
-(kw "xmlport") @keyword.type
-(kw "enum") @keyword.type
-(kw "enumextension") @keyword.type
-(kw "interface") @keyword.type
-(kw "permissionset") @keyword.type
-(kw "permissionsetextension") @keyword.type
-(kw "controladdin") @keyword.type
-(kw "profile") @keyword.type
-(kw "profileextension") @keyword.type
-(kw "pagecustomization") @keyword.type
-(kw "dotnet") @keyword.type
-(kw "entitlement") @keyword.type
+"table" @keyword.type
+"tableextension" @keyword.type
+"page" @keyword.type
+"pageextension" @keyword.type
+"codeunit" @keyword.type
+"report" @keyword.type
+"reportextension" @keyword.type
+"query" @keyword.type
+"xmlport" @keyword.type
+"enum" @keyword.type
+"enumextension" @keyword.type
+"interface" @keyword.type
+"permissionset" @keyword.type
+"permissionsetextension" @keyword.type
+"controladdin" @keyword.type
+"profile" @keyword.type
+"profileextension" @keyword.type
+"pagecustomization" @keyword.type
+"dotnet" @keyword.type
+"entitlement" @keyword.type
 
-(kw "procedure") @keyword.function
-(kw "trigger") @keyword.function
-(kw "var") @keyword.storage
-(kw "begin") @keyword
-(kw "end") @keyword
-(kw "if") @keyword.conditional
-(kw "then") @keyword.conditional
-(kw "else") @keyword.conditional
-(kw "case") @keyword.conditional
-(kw "of") @keyword.conditional
-(iv "in") @keyword.operator
-(kw "for") @keyword.repeat
-(kw "to") @keyword.repeat
-(kw "downto") @keyword.repeat
-(kw "while") @keyword.repeat
-(kw "do") @keyword.repeat
-(kw "repeat") @keyword.repeat
-(kw "until") @keyword.repeat
-(kw "with") @keyword.operator
-(kw "exit") @keyword.return
-(kw "asserterror") @keyword.exception
-(kw "foreach") @keyword.repeat
+"procedure" @keyword.function
+"trigger" @keyword.function
+"var" @keyword.storage
+"begin" @keyword
+"end" @keyword
+"if" @keyword.conditional
+"then" @keyword.conditional
+"else" @keyword.conditional
+"case" @keyword.conditional
+"of" @keyword.conditional
+"in" @keyword.operator
+"for" @keyword.repeat
+"to" @keyword.repeat
+"downto" @keyword.repeat
+"while" @keyword.repeat
+"do" @keyword.repeat
+"repeat" @keyword.repeat
+"until" @keyword.repeat
+"with" @keyword.operator
+"exit" @keyword.return
+"asserterror" @keyword.exception
+"foreach" @keyword.repeat
 
 ;; Literals
 (integer) @number
