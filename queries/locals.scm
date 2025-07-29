@@ -24,7 +24,7 @@
 (entitlement_declaration object_name: [(identifier) (quoted_identifier)] @definition.class)
 
 ;; Functions and Methods
-(procedure_declaration
+(procedure
   name: (identifier) @definition.function)
 (trigger_declaration
   trigger_name: (identifier) @definition.method)

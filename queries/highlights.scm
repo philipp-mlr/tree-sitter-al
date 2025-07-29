@@ -1,47 +1,46 @@
-;; Keywords
-"table" @keyword.type
-"tableextension" @keyword.type
-"page" @keyword.type
-"pageextension" @keyword.type
-"codeunit" @keyword.type
-"report" @keyword.type
-"reportextension" @keyword.type
-"query" @keyword.type
-"xmlport" @keyword.type
-"enum" @keyword.type
-"enumextension" @keyword.type
-"interface" @keyword.type
-"permissionset" @keyword.type
-"permissionsetextension" @keyword.type
-"controladdin" @keyword.type
-"profile" @keyword.type
-"profileextension" @keyword.type
-"pagecustomization" @keyword.type
-"dotnet" @keyword.type
-"entitlement" @keyword.type
+(table_declaration (keyword) @keyword.type)
+(tableextension_declaration (keyword) @keyword.type)
+(page_declaration (keyword) @keyword.type)
+(pageextension_declaration (keyword) @keyword.type)
+(codeunit_declaration (keyword) @keyword.type)
+(report_declaration (keyword) @keyword.type)
+(reportextension_declaration (keyword) @keyword.type)
+(query_declaration (keyword) @keyword.type)
+(xmlport_declaration (keyword) @keyword.type)
+(enum_declaration (keyword) @keyword.type)
+(enumextension_declaration (keyword) @keyword.type)
+(interface_declaration (keyword) @keyword.type)
+(permissionset_declaration (keyword) @keyword.type)
+(permissionsetextension_declaration (keyword) @keyword.type)
+(controladdin_declaration (keyword) @keyword.type)
+(profile_declaration (keyword) @keyword.type)
+(profileextension_declaration (keyword) @keyword.type)
+(pagecustomization_declaration (keyword) @keyword.type)
+(dotnet_declaration (keyword) @keyword.type)
+(entitlement_declaration (keyword) @keyword.type)
 
-"procedure" @keyword.function
-"trigger" @keyword.function
-"var" @keyword.storage
-"begin" @keyword
-"end" @keyword
-"if" @keyword.conditional
-"then" @keyword.conditional
-"else" @keyword.conditional
-"case" @keyword.conditional
-"of" @keyword.conditional
-"in" @keyword.operator
-"for" @keyword.repeat
-"to" @keyword.repeat
-"downto" @keyword.repeat
-"while" @keyword.repeat
-"do" @keyword.repeat
-"repeat" @keyword.repeat
-"until" @keyword.repeat
-"with" @keyword.operator
-"exit" @keyword.return
-"asserterror" @keyword.exception
-"foreach" @keyword.repeat
+(procedure_declaration "procedure" @keyword.function)
+(trigger_declaration "trigger" @keyword.function)
+(var_section "var" @keyword.storage)
+(code_block "begin" @keyword)
+(code_block "end" @keyword)
+(if_statement "if" @keyword.conditional)
+(if_statement "then" @keyword.conditional)
+(else_branch "else" @keyword.conditional)
+(case_statement "case" @keyword.conditional)
+(case_statement "of" @keyword.conditional)
+(for_statement "for" @keyword.repeat)
+(for_statement "to" @keyword.repeat)
+(for_statement "downto" @keyword.repeat)
+(while_statement "while" @keyword.repeat)
+(while_statement "do" @keyword.repeat)
+(repeat_statement "repeat" @keyword.repeat)
+(repeat_statement "until" @keyword.repeat)
+(with_statement "with" @keyword.operator)
+(exit_statement "exit" @keyword.return)
+(asserterror_statement "asserterror" @keyword.exception)
+(foreach_statement "foreach" @keyword.repeat)
+(foreach_statement "in" @keyword.operator)
 
 ;; Literals
 (integer) @number
