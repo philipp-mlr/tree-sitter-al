@@ -2,7 +2,7 @@
 ;; Definitions
 
 ;; Objects
-(table_declaration (object_name) @definition.class)
+(table_declaration name: (identifier) @definition.class)
 (tableextension_declaration (object_name) @definition.class)
 (page_declaration (object_name) @definition.class)
 (pageextension_declaration (object_name) @definition.class)
