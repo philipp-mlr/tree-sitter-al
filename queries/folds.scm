@@ -40,11 +40,14 @@
 (trigger_declaration body: (code_block) @fold)
 (onrun_trigger body: (code_block) @fold)
 (code_block) @fold
-(if_statement) @fold
-(case_statement) @fold
-(for_statement) @fold
-(while_statement) @fold
-(repeat_statement) @fold
+(if_statement
+  consequence: (code_block) @fold)
+(if_statement
+  alternative: (else_clause (code_block) @fold))
+(case_statement body: (_) @fold)
+(for_statement body: (code_block) @fold)
+(while_statement body: (code_block) @fold)
+(repeat_statement body: (_) @fold)
 (with_statement) @fold
 
 ; Folds for block-like structures with {}
@@ -81,8 +84,7 @@
 (fieldgroup_declaration body: (_) @fold)
 
 ; Folds for preprocessor directives
-(preproc_region) @fold.start
-(preproc_endregion) @fold.end
+(preproc_region) @fold
 (preprocessor_file_conditional) @fold
 (preproc_conditional_object_declaration) @fold
 (preproc_conditional_codeunit_declaration) @fold
