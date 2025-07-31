@@ -1,87 +1,92 @@
-;; Functions and Triggers
+;; --- Functions ---
 (procedure_declaration
-  name: (identifier) @function.name
-  body: (statement_block) @function.body)
-(trigger_declaration
-  trigger_name: (identifier) @function.name
-  body: (statement_block) @function.body)
+  body: (_) @function.inner) @function.outer
 
-(procedure_declaration) @function.outer
-(trigger_declaration) @function.outer
+;; --- Objects as class-like structures ---
+(table_declaration
+  body: (_) @class.inner) @class.outer
 
-;; Around/Inside selections for functions and triggers
-(statement_block) @function.inner
+(tableextension_declaration
+  body: (_) @class.inner) @class.outer
 
-;; Parameters
-(parameter_list) @parameter.inner
-(parameter) @parameter.outer
+(codeunit_declaration
+  body: (_) @class.inner) @class.outer
 
-;; Statements
-(if_statement) @statement.outer
-(case_statement) @statement.outer
-(for_statement) @statement.outer
-(while_statement) @statement.outer
-(repeat_statement) @statement.outer
-(assignment_expression) @statement.outer
-(statement_block) @statement.inner
+(page_declaration
+  body: (_) @class.inner) @class.outer
 
-;; Comments
-(comment) @comment.outer
-(multiline_comment) @comment.outer
+(pageextension_declaration
+  body: (_) @class.inner) @class.outer
 
-;; Strings
-(string_literal) @string.inner
+(pagecustomization_declaration
+  body: (_) @class.inner) @class.outer
 
-;; Objects
-(table_declaration) @class.outer
-(tableextension_declaration) @class.outer
-(page_declaration) @class.outer
-(pageextension_declaration) @class.outer
-(codeunit_declaration) @class.outer
-(report_declaration) @class.outer
-(reportextension_declaration) @class.outer
-(query_declaration) @class.outer
-(xmlport_declaration) @class.outer
-(enum_declaration) @class.outer
-(enumextension_declaration) @class.outer
-(interface_declaration) @class.outer
-(permissionset_declaration) @class.outer
-(permissionsetextension_declaration) @class.outer
-(controladdin_declaration) @class.outer
-(profile_declaration) @class.outer
-(profileextension_declaration) @class.outer
-(pagecustomization_declaration) @class.outer
-(dotnet_declaration) @class.outer
-(entitlement_declaration) @class.outer
+(profile_declaration
+  body: (_) @class.inner) @class.outer
 
-(table_declaration (object_name) @class.name)
-(tableextension_declaration (object_name) @class.name)
-(page_declaration (object_name) @class.name)
-(pageextension_declaration (object_name) @class.name)
-(codeunit_declaration (object_name) @class.name)
-(report_declaration (object_name) @class.name)
-(reportextension_declaration (object_name) @class.name)
-(query_declaration (object_name) @class.name)
-(xmlport_declaration (object_name) @class.name)
-(enum_declaration (object_name) @class.name)
-(enumextension_declaration (object_name) @class.name)
-(interface_declaration (object_name) @class.name)
-(permissionset_declaration (object_name) @class.name)
-(permissionsetextension_declaration (object_name) @class.name)
-(controladdin_declaration (object_name) @class.name)
-(profile_declaration (object_name) @class.name)
-(profileextension_declaration (object_name) @class.name)
-(pagecustomization_declaration (object_name) @class.name)
-(dotnet_declaration (object_name) @class.name)
-(entitlement_declaration (object_name) @class.name)
+(profileextension_declaration
+  body: (_) @class.inner) @class.outer
 
-;; Properties, Fields, and Actions
-(property_list) @property.inner
-(property) @property.outer
-(field_declaration) @field.outer
-(key_declaration) @field.outer
-(action_declaration) @function.outer
-(page_field) @field.outer
-(dataitem) @class.outer
-(enum_value) @field.outer
+(report_declaration
+  body: (_) @class.inner) @class.outer
 
+(reportextension_declaration
+  body: (_) @class.inner) @class.outer
+
+(query_declaration
+  body: (_) @class.inner) @class.outer
+
+(enum_declaration
+  body: (_) @class.inner) @class.outer
+
+(enumextension_declaration
+  body: (_) @class.inner) @class.outer
+
+(xmlport_declaration
+  body: (_) @class.inner) @class.outer
+
+(interface_declaration
+  body: (_) @class.inner) @class.outer
+
+(dotnet_declaration
+  body: (_) @class.inner) @class.outer
+
+(controladdin_declaration
+  body: (_) @class.inner) @class.outer
+
+(permissionset_declaration
+  body: (_) @class.inner) @class.outer
+
+(permissionsetextension_declaration
+  body: (_) @class.inner) @class.outer
+
+(entitlement_declaration
+  body: (_) @class.inner) @class.outer
+
+(preproc_conditional_object_declaration
+  body: (_) @class.inner) @class.outer
+
+(preproc_conditional_enum_declaration
+  body: (_) @class.inner) @class.outer
+
+(preproc_conditional_codeunit_declaration
+  body: (_) @class.inner) @class.outer
+
+;; --- Parameters ---
+(parameter_list (_) @parameter.inner) @parameter.outer
+
+;; --- Loops ---
+(while_statement
+  body: (_) @loop.inner) @loop.outer
+
+(for_statement
+  body: (_) @loop.inner) @loop.outer
+
+(repeat_statement
+  body: (_) @loop.inner) @loop.outer
+
+;; --- Conditionals ---
+(if_statement
+  consequence: (_) @conditional.inner) @conditional.outer
+
+(case_statement (_) @conditional.inner) @conditional.outer
